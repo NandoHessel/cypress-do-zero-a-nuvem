@@ -150,7 +150,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       })
   })
 
-  it('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
+  it('Seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', () => {
     cy.fixture('example.json').as('sampleFile')
 
     cy.get('#file-upload').selectFile('@sampleFile')
@@ -159,11 +159,11 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       })
   })
 
-  it('verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
+  it('Verifica que a política de privacidade abre em outra aba sem a necessidade de um clique', () => {
     cy.get('a[href="privacy.html"]').should('have.attr', 'target', '_blank')
   })
 
-  it('acessa a página da política de privacidade removendo o target e então clicando no link', () => {
+  it('Acessa a página da política de privacidade removendo o target e então clicando no link', () => {
     cy.get('a[href="privacy.html"]')
       .invoke('removeAttr', 'target')
       .should('not.have.attr', 'target', '_blank')
@@ -174,7 +174,7 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       .should('have.text', 'CAC TAT - Política de Privacidade')
   })
 
-  it('testa a página da política de privacidade de forma independente', () => {
+  it('Testa a página da política de privacidade de forma independente', () => {
     cy.visit('./src/privacy.html')
 
     cy.get('#title')
