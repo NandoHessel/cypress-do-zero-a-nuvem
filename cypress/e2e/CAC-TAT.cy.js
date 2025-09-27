@@ -225,9 +225,13 @@ describe('Central de Atendimento ao Cliente TAT', () => {
       expect(response.status).to.equal(200);
       expect(response.statusText).to.equal('OK');
       expect(response.body).contain('CAC TAT');
-      //expect(response.body.usuarios[0].nome).to.equal('Fulano da Silva')
-      //expect(response.body.usuarios[0].email).to.equal('fulano@qa.com')
     })
+  })
+
+  it.only('fazer o gato aparecer', () => {
+    cy.get('#cat')
+      .invoke('show')
+      .should('be.visible')
   })
 
 
